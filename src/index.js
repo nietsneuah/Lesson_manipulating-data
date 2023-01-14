@@ -29,7 +29,13 @@ const mappedFunction = (dog) => ({ state: dog.fieldData.State, name: dog.fieldDa
 const updateEachElement = (company) => {
     company.fieldData.CityState = `${company.fieldData.City}, ${company.fieldData.State}`;
 }
-companiesData.forEach(updateEachElement);
+// companiesData.forEach(updateEachElement);
+// find unique states
+// const manipulatedData = companiesData.map((company) => company.fieldData.State).filter((state, index, array) => array.indexOf(state) === index);
+
+// find unique states with Set then sort
+const manipulatedData = [...new Set(companiesData.map((company) => company.fieldData.State))].sort();
+// const manipulatedData = [...new Set(companiesData.map((company) => company.fieldData.State))].sort();
 
 //TODO: add the manipulated data array to the 'after' div.
 before.innerHTML = JSON.stringify(companiesData, null, 2);
