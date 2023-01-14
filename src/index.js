@@ -22,9 +22,14 @@ const filterFunction = (company) => company.fieldData.State === "TX" || company.
 //   return {
 //   name: dog.fieldData.CompanyName ,city:  dog.fieldData.City }
 // };
+//same as above but with arrow function
 const mappedFunction = (dog) => ({ state: dog.fieldData.State, name: dog.fieldData.CompanyName, city: dog.fieldData.City });
+// const manipulatedData = companiesData.map(mappedFunction);
 
-const manipulatedData = companiesData.map(mappedFunction);
+const updateEachElement = (company) => {
+    company.fieldData.CityState = `${company.fieldData.City}, ${company.fieldData.State}`;
+}
+companiesData.forEach(updateEachElement);
 
 //TODO: add the manipulated data array to the 'after' div.
 before.innerHTML = JSON.stringify(companiesData, null, 2);
