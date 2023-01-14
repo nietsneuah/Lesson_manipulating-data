@@ -1,5 +1,6 @@
 import { companiesData } from "./companies-data";
 import { extraRecord } from "./extra-record";
+import { filterFunction, mappedFunction, updateEachElement } from "./utils";
 // before and after are divs in the index.html file
 const before = document.getElementById("before");
 // TODO: manipulate the data array and store it in a new variable
@@ -16,19 +17,19 @@ const before = document.getElementById("before");
 // filter the array to only include state of "TX"
 // const manipulatedData = companiesData.filter((company) => company.fieldData.State === "TX" || company.fieldData.State === "PA");
 // define a function to filter the array to only include state of "TX"
-const filterFunction = (company) => company.fieldData.State === "TX" || company.fieldData.State === "PA";
+// const filterFunction = (company) => company.fieldData.State === "TX" || company.fieldData.State === "PA";
 
-// const mappedFunction = function (dog) {
-//   return {
-//   name: dog.fieldData.CompanyName ,city:  dog.fieldData.City }
-// };
-//same as above but with arrow function
-const mappedFunction = (dog) => ({ state: dog.fieldData.State, name: dog.fieldData.CompanyName, city: dog.fieldData.City });
-// const manipulatedData = companiesData.map(mappedFunction);
+// // const mappedFunction = function (dog) {
+// //   return {
+// //   name: dog.fieldData.CompanyName ,city:  dog.fieldData.City }
+// // };
+// //same as above but with arrow function
+// const mappedFunction = (dog) => ({ state: dog.fieldData.State, name: dog.fieldData.CompanyName, city: dog.fieldData.City });
+// // const manipulatedData = companiesData.map(mappedFunction);
 
-const updateEachElement = (company) => {
-    company.fieldData.CityState = `${company.fieldData.City}, ${company.fieldData.State}`;
-}
+// const updateEachElement = (company) => {
+//     company.fieldData.CityState = `${company.fieldData.City}, ${company.fieldData.State}`;
+// }
 // companiesData.forEach(updateEachElement);
 // find unique states
 // const manipulatedData = companiesData.map((company) => company.fieldData.State).filter((state, index, array) => array.indexOf(state) === index);
