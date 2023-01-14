@@ -11,6 +11,7 @@ const before = document.getElementById("before");
 // shift the first element from the array
 // const manipulatedData = companiesData.shift();
 // push the extraRecord to the end of the array
+companiesData.push(extraRecord);
 // const manipulatedData = companiesData.push(extraRecord);
 // unshift the extraRecord to the beginning of the array
 // const manipulatedData = companiesData.unshift(extraRecord);
@@ -30,7 +31,7 @@ const before = document.getElementById("before");
 // const updateEachElement = (company) => {
 //     company.fieldData.CityState = `${company.fieldData.City}, ${company.fieldData.State}`;
 // }
-// companiesData.forEach(updateEachElement);
+companiesData.forEach(updateEachElement);
 // find unique states
 // const manipulatedData = companiesData.map((company) => company.fieldData.State).filter((state, index, array) => array.indexOf(state) === index);
 
@@ -50,3 +51,7 @@ after.innerHTML = JSON.stringify(manipulatedData, null, 2);
 console.log(companiesData.length);
 // console log manipulatedData Length
 console.log(manipulatedData.length);
+// console log lastindexof TX in companiesData
+console.log(companiesData.map((company) => company.fieldData.State).lastIndexOf("TX"));
+// console log how many times TX appears in manipulatedData
+console.log(manipulatedData.map((company) => company.state).filter((state) => state === "TN").length);
