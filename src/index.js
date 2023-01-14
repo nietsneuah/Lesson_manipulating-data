@@ -34,8 +34,12 @@ const updateEachElement = (company) => {
 // const manipulatedData = companiesData.map((company) => company.fieldData.State).filter((state, index, array) => array.indexOf(state) === index);
 
 // find unique states with Set then sort
-const manipulatedData = [...new Set(companiesData.map((company) => company.fieldData.State))].sort();
 // const manipulatedData = [...new Set(companiesData.map((company) => company.fieldData.State))].sort();
+// // const manipulatedData = [...new Set(companiesData.map((company) => company.fieldData.State))].sort();
+// use filter and map to get an array of objects with only the company name and city
+// Chaining 2 functions together both return a new array
+const manipulatedData = companiesData.filter(filterFunction).map(mappedFunction);
+
 
 //TODO: add the manipulated data array to the 'after' div.
 before.innerHTML = JSON.stringify(companiesData, null, 2);
