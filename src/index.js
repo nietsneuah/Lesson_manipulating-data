@@ -26,7 +26,7 @@ const before = document.getElementById("before");
 // //same as above but with arrow function
 // const mappedFunction = (dog) => ({ state: dog.fieldData.State, name: dog.fieldData.CompanyName, city: dog.fieldData.City });
 // // const manipulatedData = companiesData.map(mappedFunction);
-
+// Use literal notation to create an object with the properties city and state and assign it to a variable CityState
 // const updateEachElement = (company) => {
 //     company.fieldData.CityState = `${company.fieldData.City}, ${company.fieldData.State}`;
 // }
