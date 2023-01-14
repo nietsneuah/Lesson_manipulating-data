@@ -14,7 +14,10 @@ const before = document.getElementById("before");
 // unshift the extraRecord to the beginning of the array
 // const manipulatedData = companiesData.unshift(extraRecord);
 // filter the array to only include state of "TX"
-const manipulatedData = companiesData.filter((company) => company.fieldData.State === "TX" || company.fieldData.State === "PA");
+// const manipulatedData = companiesData.filter((company) => company.fieldData.State === "TX" || company.fieldData.State === "PA");
+// define a function to filter the array to only include state of "TX"
+const filterFunction = (company) => company.fieldData.State === "TX" || company.fieldData.State === "PA";
+const manipulatedData = companiesData.filter(filterFunction);
 
 //TODO: add the manipulated data array to the 'after' div.
 before.innerHTML = JSON.stringify(companiesData, null, 2);
