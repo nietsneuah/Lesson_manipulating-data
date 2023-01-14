@@ -17,7 +17,14 @@ const before = document.getElementById("before");
 // const manipulatedData = companiesData.filter((company) => company.fieldData.State === "TX" || company.fieldData.State === "PA");
 // define a function to filter the array to only include state of "TX"
 const filterFunction = (company) => company.fieldData.State === "TX" || company.fieldData.State === "PA";
-const manipulatedData = companiesData.filter(filterFunction);
+
+// const mappedFunction = function (dog) {
+//   return {
+//   name: dog.fieldData.CompanyName ,city:  dog.fieldData.City }
+// };
+const mappedFunction = (dog) => ({ state: dog.fieldData.State, name: dog.fieldData.CompanyName, city: dog.fieldData.City });
+
+const manipulatedData = companiesData.map(mappedFunction);
 
 //TODO: add the manipulated data array to the 'after' div.
 before.innerHTML = JSON.stringify(companiesData, null, 2);
